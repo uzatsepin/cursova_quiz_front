@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
-    "start": "vite"
+    "start": "vite preview --port 3010"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.19",
