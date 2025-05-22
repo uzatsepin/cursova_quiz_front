@@ -34,8 +34,9 @@ export const useAuthStore = defineStore('auth', {
 
       try {
         const response = await axios.post(`${API_URL}/login`, credentials)
+
         if (response.data && response.data.id) {
-          this.setUser(response.data)
+          this.setUser({ ...response.data, password: credentials.password })
           const toastStore = useToastStore()
           toastStore.success('Ласкаво просимо!')
           router.push('/courses')
@@ -116,7 +117,7 @@ export const useAuthStore = defineStore('auth', {
         try {
           const response = await axios.post(`${API_URL}/login`, { email, password })
           if (response.data && response.data.id) {
-            this.setUser(response.data)
+            this.setUser({ ...response.data, password })
             return true
           }
           this.clearAuth()

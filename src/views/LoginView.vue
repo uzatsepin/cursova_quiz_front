@@ -86,7 +86,7 @@ const handleSubmit = async () => {
   loading.value = true;
   try {
     error.value = "";
-    await authStore.login(email.value, password.value);
+    await authStore.login({ email: email.value, password: password.value });
     router.push("/courses");
   } catch (err) {
     error.value = err.toString();
