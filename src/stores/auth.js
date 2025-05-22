@@ -3,7 +3,7 @@ import axios from 'axios'
 import router from '@/router'
 import { useToastStore } from './toast'
 
-const API_URL = 'http://localhost:3000/api'
+const API_URL = 'https://api.felearn.pro/api'
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
